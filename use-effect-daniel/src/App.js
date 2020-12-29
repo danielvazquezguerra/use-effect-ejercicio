@@ -4,6 +4,7 @@ import Contador from './Components/contador';
 import MostrarColor from './Components/mostrar-color';
 import React, {useState} from 'react';
 import LifeCycle from './Components/LifeCycle';
+import FetchCard from './Components/FetchCard';
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
     <div className="App">
 
       <LifeCycle />
+
+      <FetchCard />
 
       {/* <Contador />
 
