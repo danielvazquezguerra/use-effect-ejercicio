@@ -3,6 +3,7 @@ import './App.scss';
 import Contador from './Components/contador';
 import MostrarColor from './Components/mostrar-color';
 import React, {useState} from 'react';
+import LifeCycle from './Components/LifeCycle';
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <LifeCycle />
 
       {/* <Contador />
 
