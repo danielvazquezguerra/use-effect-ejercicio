@@ -1,19 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import getUser from '../helpers/getUser';
 import getPosts from '../helpers/getPosts';
 
 const FetchCard = () => {
     
-    // const initialUser = {
-    //     name: "Daniel",
-    //     email: "daniel.vazquezguerra@gmaill.com",
-
-    // }
-
-    // const initialPosts = [
-    //     {id: 1, title: "Post 1"},
-    //     {id: 2, title: "Post 2"}
-    // ];
     const [user, setUser] = useState({});
     const [posts, setPosts] = useState([]);
     
@@ -27,23 +17,28 @@ const FetchCard = () => {
 
     }
 
-    const updatePosts = () => {
+    const updatePosts = useCallback(() => {
 
-        getPosts()
+        getPosts(user.id)
         .then((newPosts)=>{
             setPosts(newPosts);
+            console.log("hola update");
         })
 
-    }
+    },[user.id]);
 
     useEffect(() => {
+
       updateUser();
     
     }, [])
 
     useEffect(() => {
-      updatePosts();
-    }, [user])
+
+        if (user?.id) {
+            updatePosts();
+        }
+    }, [user, updatePosts])
     
 
     
@@ -61,7 +56,9 @@ const FetchCard = () => {
                     
                         posts.map(post =>(
 
-                            <li key={post.id}>{post.name}</li>
+                            <li key={post.id}>
+                                <p>{post.title}</p>
+                            </li>
                             
                         ))
                     
