@@ -9,11 +9,19 @@ const Resize = (props) => {
     const isMobile = windowWidth < 768;
 
     useEffect(() => {
-      window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
 
-      return () => {
-          console.log('componente desmontado');
-      }
+        const handleResize =  () => setWindowWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+
+            window.removeEventListener('resize', handleResize);
+            console.log('Listener removido');
+            console.log('componente desmontado');
+
+        }
+
     }, []);
 
 

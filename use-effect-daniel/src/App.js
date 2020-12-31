@@ -1,20 +1,21 @@
 
 import './App.scss';
-import Contador from './Components/contador';
-import MostrarColor from './Components/mostrar-color';
 import React, {useState} from 'react';
+// import Contador from './Components/contador';
+// import MostrarColor from './Components/mostrar-color';
 import LifeCycle from './Components/LifeCycle';
-import FetchCard from './Components/FetchCard';
-import Resize from './Components/Resize';
+import Nosotros from './Components/Nosotros';
+// import FetchCard from './Components/FetchCard';
+// import Resize from './Components/Resize';
 
 function App() {
 
-  const [mostrar, SetMostrar] = useState(true);
-  const [show, setShow] = useState(true);
+  // const [mostrar, SetMostrar] = useState(true);
+  const [show, setShow] = useState(false);
 
-  const mostrarOcultar = () => {
-    SetMostrar(!mostrar);
-  }
+  // const mostrarOcultar = () => {
+  //   SetMostrar(!mostrar);
+  // }
 
   const mostrarComponente = () => {
     setShow(!show);
@@ -22,17 +23,25 @@ function App() {
 
 
   return (
+
     <div className="App">
 
-      {/* <LifeCycle />
+      <button onClick={mostrarComponente}>Mostrar/Ocultar</button>
 
-      <FetchCard /> */}
+      {
+        show && <LifeCycle />
+      }
 
-          <button onClick={mostrarComponente}>mostrar/ocultar</button>
+      <Nosotros />
+
+
+      {/* <FetchCard /> */}
+
+          {/* <button onClick={mostrarComponente}>mostrar/ocultar</button>
 
           {
             show && <Resize title="Resize" show={show}/>
-          }
+          } */}
 
       
 
