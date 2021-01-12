@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 // import MostrarColor from './Components/mostrar-color';
 import LifeCycle from './Components/LifeCycle';
 import Nosotros from './Components/Nosotros';
+import AxiosDaniel from './Components/AxiosDaniel';
 // import FetchCard from './Components/FetchCard';
 // import Resize from './Components/Resize';
 
@@ -33,6 +34,7 @@ function App() {
       }
 
       <Nosotros />
+      <AxiosDaniel />
 
 
       {/* <FetchCard /> */}

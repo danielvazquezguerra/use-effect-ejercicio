@@ -14,7 +14,6 @@ const Nosotros = () => {
 
     useEffect(() => {
 
-        console.log(mostrar);
 
       
     }, [mostrar])
